@@ -3,7 +3,7 @@
 <%= link_to "Create List", new_list_path %>
 <div class="cards">
     <% @lists.each do |list| %>
-      <div class="card">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? (cl_image_path list.photo.key, height: 300, crop: :fill) : (image_path "popcorn-movie-party-entertainment.webp") %>')">
         <%= link_to list.name, list_path(list.id) %>
       </div>
     <% end %>

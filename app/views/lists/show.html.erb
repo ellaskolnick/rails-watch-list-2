@@ -1,4 +1,6 @@
-<h1><%= @list.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @list.photo.attached? ? (cl_image_path @list.photo.key, height: 300, crop: :fill) : (image_path "popcorn-movie-party-entertainment.webp") %>')">
+  <h1><%= @list.name %></h1>
+</div>
 <%= link_to "Back", root_path %>
 <br>
 <%= link_to "Add a Movie!", new_list_bookmark_path(@list) %>
